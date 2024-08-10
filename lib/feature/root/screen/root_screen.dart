@@ -1,3 +1,5 @@
+import 'package:architecture/core/common/default_screen.dart';
+import 'package:architecture/core/config/style/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:collection/collection.dart';
@@ -16,8 +18,7 @@ class RootScreen extends StatefulWidget {
 class _RootScreenState extends State<RootScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
+    return DefaultScreen(
       body: Stack(
         children: [
           ...widget.children.mapIndexed((int index, Widget navigator) {
