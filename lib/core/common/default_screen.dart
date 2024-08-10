@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:architecture/core/config/style/app_color.dart';
 
 class DefaultScreen extends StatelessWidget {
   const DefaultScreen({
@@ -14,8 +13,11 @@ class DefaultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: appColor.background,
-      body: body,
+      body: SizedBox.expand(
+        child: SafeArea(
+          child: body,
+        ),
+      ),
       bottomNavigationBar: bottomNavigationBar,
     );
   }

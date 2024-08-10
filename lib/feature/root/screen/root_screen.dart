@@ -1,8 +1,7 @@
-import 'package:architecture/core/common/default_screen.dart';
-import 'package:architecture/core/config/style/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:collection/collection.dart';
+
 import 'package:architecture/feature/root/widgets/custom_bottom_navigator_bar.dart';
 
 class RootScreen extends StatefulWidget {
@@ -18,14 +17,14 @@ class RootScreen extends StatefulWidget {
 class _RootScreenState extends State<RootScreen> {
   @override
   Widget build(BuildContext context) {
-    return DefaultScreen(
+    return Scaffold(
       body: Stack(
         children: [
           ...widget.children.mapIndexed((int index, Widget navigator) {
             final isCurrentIndex = index == widget.navigationShell.currentIndex;
             return AnimatedOpacity(
               opacity: isCurrentIndex ? 1 : 0,
-              duration: const Duration(milliseconds: 250),
+              duration: const Duration(milliseconds: 550),
               child: IgnorePointer(
                 ignoring: !isCurrentIndex,
                 child: TickerMode(
