@@ -11,7 +11,7 @@ enum AppRouter {
 
   /// My Router
   my(path: '/my', name: 'my', routerConfigPath: '/my'),
-  auth(path: '/my/auth', name: 'auth', routerConfigPath: '/my/auth'),
+  auth(path: '/my/auth', name: 'auth', routerConfigPath: 'auth'),
   example(path: '/example', name: 'example', routerConfigPath: '/example');
 
   const AppRouter({

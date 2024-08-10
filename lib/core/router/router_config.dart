@@ -6,8 +6,10 @@ import 'package:architecture/feature/home/screen/home_screen.dart';
 import 'package:architecture/feature/tab2/screen/tab2_screen.dart';
 import 'package:architecture/feature/tab3/screen/tab3_screen.dart';
 import 'package:architecture/feature/tab4/screen/tab4_screen.dart';
-import 'package:architecture/feature/my/screen/my_screen.dart';
 
+/// My Route
+import 'package:architecture/feature/my/screen/my_screen.dart';
+import 'package:architecture/feature/my/screen/auth_screen.dart';
 
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 
@@ -73,7 +75,15 @@ final routerConfig = GoRouter(
               builder: (BuildContext context, GoRouterState state) {
                 return const MyScreen();
               },
-              routes: const [],
+              routes: [
+                GoRoute(
+                  path: AppRouter.auth.routerConfigPath,
+                  name: AppRouter.auth.name,
+                  builder: (BuildContext context, GoRouterState state) {
+                    return const AuthScreen();
+                  },
+                ),
+              ],
             ),
           ],
         ),
