@@ -48,3 +48,9 @@ app.*.map.json
 # Code Generator related
 **.freezed.dart
 **.g.dart
+
+# Firebase
+firebase.json
+firebase_options.dart
+google-services.json
+GoogleService-info.plist

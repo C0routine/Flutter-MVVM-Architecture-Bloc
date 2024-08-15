@@ -48,6 +48,7 @@ dependencies:
   # Model Define Generator
   freezed_annotation: ^2.4.4
   collection: ^1.18.0
+  firebase_core: ^3.3.0
 
 dev_dependencies:
   flutter_test:
