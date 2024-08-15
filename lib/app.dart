@@ -24,9 +24,10 @@ class _AppState extends State<App> {
       ),
       minTextAdapt: true,
       builder: (BuildContext context, Widget? child) {
-        return BlocProvider(
-          lazy: false,
-          create: (BuildContext context) => ThemeBloc(),
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(lazy: false, create: (context) => ThemeBloc()),
+          ],
           child: BlocBuilder<ThemeBloc, ThemeState>(
             builder: (BuildContext context, state) {
               return MaterialApp.router(
