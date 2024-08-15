@@ -15,7 +15,7 @@ class Tab2Screen extends StatelessWidget {
           'Tab2 Screen',
           style: TextStyle(
             fontSize: 30.sp,
-            color: context.appColor.textPrimary,
+            color: context.color.textPrimary,
           ),
         ),
       ),

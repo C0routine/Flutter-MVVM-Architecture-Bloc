@@ -17,7 +17,7 @@ class _AuthScreenState extends State<AuthScreen> {
       body: Center(
         child: Text(
           'Auth Screen',
-          style: TextStyle(fontSize: 30.sp, color: context.appColor.textPrimary),
+          style: TextStyle(fontSize: 30.sp, color: context.color.textPrimary),
         ),
       ),
     );

@@ -19,7 +19,7 @@ class MyScreen extends StatelessWidget {
           },
           child: Text(
             'My Screen',
-            style: TextStyle(fontSize: 30.sp, color: context.appColor.textPrimary),
+            style: TextStyle(fontSize: 30.sp, color: context.color.textPrimary),
           ),
         ),
       ),

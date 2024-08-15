@@ -13,7 +13,7 @@ class Tab4Screen extends StatelessWidget {
       body: Center(
         child: Text(
           'Tab4 Screen',
-          style: TextStyle(fontSize: 30.sp, color: context.appColor.textPrimary),
+          style: TextStyle(fontSize: 30.sp, color: context.color.textPrimary),
         ),
       ),
     );
