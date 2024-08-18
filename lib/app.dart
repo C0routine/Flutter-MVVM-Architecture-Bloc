@@ -5,7 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:architecture/core/config/app_style.dart';
 import 'package:architecture/core/config/app_theme.dart';
 import 'package:architecture/core/router/router_config.dart';
+
 import 'package:architecture/feature/theme/bloc/barrel.dart';
+import 'package:architecture/feature/modal/bloc/barrel.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -27,6 +29,7 @@ class _AppState extends State<App> {
         return MultiBlocProvider(
           providers: [
             BlocProvider(lazy: false, create: (context) => ThemeBloc()),
+            BlocProvider(create: (context) => ModalBloc()),
           ],
           child: BlocBuilder<ThemeBloc, ThemeState>(
             builder: (BuildContext context, state) {
