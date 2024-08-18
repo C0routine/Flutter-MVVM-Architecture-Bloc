@@ -1,7 +1,14 @@
+import 'package:architecture/app.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:architecture/core/config/app_color.dart';
 import 'package:architecture/feature/theme/bloc/barrel.dart';
+
+extension ThemeShortcut on BuildContext {
+  AppColor get appColor => Theme.of(this).extension<CustomAppThemeExtension>()!;
+  CustomAppTextExtension get textStyle => Theme.of(this).extension<CustomAppTextExtension>()!;
+}
 
 ThemeData customAppTheme(ThemeType type) {
   /// 현재 테마에 맞는 AppColor instance 생성
@@ -11,10 +18,12 @@ ThemeData customAppTheme(ThemeType type) {
     scaffoldBackgroundColor: appColor.bg100,
     extensions: <ThemeExtension>[
       CustomAppThemeExtension(appColor: appColor, themeType: type),
+      CustomAppTextExtension(),
     ],
   );
 }
 
+/// App Color ThemeExtension
 class CustomAppThemeExtension extends ThemeExtension<CustomAppThemeExtension> implements AppColor {
   CustomAppThemeExtension({required this.appColor, required this.themeType});
 
@@ -66,6 +75,21 @@ class CustomAppThemeExtension extends ThemeExtension<CustomAppThemeExtension> im
   Color get textSub => appColor.textSub;
 }
 
-extension ThemeShortcut on BuildContext {
-  AppColor get appColor => Theme.of(this).extension<CustomAppThemeExtension>()!;
+/// App TextStyle ThemeExtension
+class CustomAppTextExtension extends ThemeExtension<CustomAppTextExtension> {
+  @override
+  ThemeExtension<CustomAppTextExtension> copyWith() {
+    return this;
+  }
+
+  @override
+  ThemeExtension<CustomAppTextExtension> lerp(covariant ThemeExtension<CustomAppTextExtension>? other, double t) {
+    return this;
+  }
+
+  final TextStyle title20b = TextStyle(fontSize: 20.spMin, fontWeight: FontWeight.bold);
+  final TextStyle title20n = TextStyle(fontSize: 20.spMin, fontWeight: FontWeight.normal);
+
+  final TextStyle body16b = TextStyle(fontSize: 16.spMin, fontWeight: FontWeight.bold);
+  final TextStyle body16n = TextStyle(fontSize: 16.spMin, fontWeight: FontWeight.normal);
 }
