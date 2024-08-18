@@ -13,7 +13,7 @@ class ThemeSwitchWidget extends StatefulWidget {
 class _ThemeSwitchWidgetState extends State<ThemeSwitchWidget> {
   @override
   Widget build(BuildContext context) {
-    final textStyle = TextStyle(fontSize: 16, color: context.color.textPrimary);
+    final textStyle = TextStyle(fontSize: 16, color: context.color.textMain);
 
     return Row(
       mainAxisSize: MainAxisSize.min,
