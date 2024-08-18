@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'package:architecture/core/config/app_theme.dart';
 
 class CustomBottomNavigatorBar extends StatelessWidget {
   const CustomBottomNavigatorBar({super.key, required this.navigationShell, required this.children});
@@ -10,26 +13,36 @@ class CustomBottomNavigatorBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<({String label, IconData icon})> bottomNavigatorItem = [
+      (label: 'Home', icon: Icons.home),
+      (label: 'Tab2', icon: Icons.cable),
+      (label: 'Tab3', icon: Icons.satellite_alt),
+      (label: 'Tab4', icon: Icons.factory),
+      (label: 'My', icon: Icons.person),
+    ];
+
     return Container(
       width: 1.sw,
       padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom),
-      color: Colors.grey[200],
+      color: context.appColor.bg200,
       child: Row(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          _bottomNavigatorBarItem(index: 0, label: 'Home', icon: Icons.home),
-          _bottomNavigatorBarItem(index: 1, label: 'Tab2', icon: Icons.cable),
-          _bottomNavigatorBarItem(index: 2, label: 'Tab3', icon: Icons.satellite_alt),
-          _bottomNavigatorBarItem(index: 3, label: 'Tab4', icon: Icons.factory),
-          _bottomNavigatorBarItem(index: 4, label: 'My', icon: Icons.person),
-        ],
+        children: bottomNavigatorItem.mapIndexed((int index, item) {
+          return _bottomNavigatorBarItem(
+            context: context,
+            index: index,
+            label: item.label,
+            icon: item.icon,
+          );
+        }).toList(),
       ),
     );
   }
 
   Widget _bottomNavigatorBarItem({
+    required BuildContext context,
     required int index,
     required String label,
     required IconData icon,
@@ -49,13 +62,13 @@ class CustomBottomNavigatorBar extends StatelessWidget {
             SizedBox(
               width: 25,
               height: 25,
-              child: Icon(icon, color: isCurrentIndex ? Colors.blue : Colors.grey),
+              child: Icon(icon, color: isCurrentIndex ? context.appColor.primary300 : context.appColor.primary200),
             ),
             Text(
               label,
               style: TextStyle(
                 fontSize: isCurrentIndex ? 16 : 14,
-                color: isCurrentIndex ? Colors.blue : Colors.grey,
+                color: isCurrentIndex ? context.appColor.textMain : context.appColor.textSub,
                 fontWeight: isCurrentIndex ? FontWeight.bold : FontWeight.normal,
               ),
             ),

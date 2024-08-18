@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:collection/collection.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:architecture/feature/modal/bloc/barrel.dart';
 import 'package:architecture/feature/root/widgets/custom_bottom_navigator_bar.dart';
 
 class RootScreen extends StatefulWidget {
@@ -15,6 +17,13 @@ class RootScreen extends StatefulWidget {
 }
 
 class _RootScreenState extends State<RootScreen> {
+  @override
+  void initState() {
+    super.initState();
+
+    context.read<ModalBloc>().add(VersionModalShowed(context: context));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
