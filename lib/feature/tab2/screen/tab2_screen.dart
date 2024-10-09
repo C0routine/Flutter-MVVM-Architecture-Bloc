@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:architecture/core/common/default_screen.dart';
 import 'package:architecture/core/extensions/theme_extension.dart';
@@ -14,7 +13,7 @@ class Tab2Screen extends StatelessWidget {
         child: Text(
           'Tab2 Screen',
           style: TextStyle(
-            fontSize: 30.sp,
+            fontSize: 30,
             color: context.color.textMain,
           ),
         ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:architecture/core/common/default_screen.dart';
 import 'package:architecture/core/extensions/theme_extension.dart';
 
@@ -17,7 +16,7 @@ class _AuthScreenState extends State<AuthScreen> {
       body: Center(
         child: Text(
           'Auth Screen',
-          style: TextStyle(fontSize: 30.sp, color: context.color.textMain),
+          style: TextStyle(fontSize: 30, color: context.color.textMain),
         ),
       ),
     );
