@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:architecture/feature/theme/bloc/barrel.dart';
+import 'package:architecture/feature/setting/bloc/barrel.dart';
 
 /// AppColor 추상 클래스 (Dark, Light 모두 사용 가능한 AppColor 를 구현)
 /// [theme] 값에 따라 DarkAppColor 또는 LightAppColor instance 를 반환
