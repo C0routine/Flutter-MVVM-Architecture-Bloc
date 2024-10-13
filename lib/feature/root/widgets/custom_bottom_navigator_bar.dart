@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:collection/collection.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:architecture/core/config/app_theme.dart';
+import 'package:architecture/core/configs/app_theme.dart';
 
 class CustomBottomNavigatorBar extends StatelessWidget {
-  const CustomBottomNavigatorBar({super.key, required this.navigationShell, required this.children});
+  const CustomBottomNavigatorBar(
+      {super.key, required this.navigationShell, required this.children});
 
   final StatefulNavigationShell navigationShell;
   final List<Widget> children;
@@ -22,8 +22,8 @@ class CustomBottomNavigatorBar extends StatelessWidget {
     ];
 
     return Container(
-      width: 1.sw,
-      padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom),
+      padding:
+          EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom),
       color: context.appColor.bg200,
       child: Row(
         mainAxisSize: MainAxisSize.max,
@@ -62,14 +62,20 @@ class CustomBottomNavigatorBar extends StatelessWidget {
             SizedBox(
               width: 25,
               height: 25,
-              child: Icon(icon, color: isCurrentIndex ? context.appColor.primary300 : context.appColor.primary200),
+              child: Icon(icon,
+                  color: isCurrentIndex
+                      ? context.appColor.primary300
+                      : context.appColor.primary200),
             ),
             Text(
               label,
               style: TextStyle(
                 fontSize: isCurrentIndex ? 16 : 14,
-                color: isCurrentIndex ? context.appColor.textMain : context.appColor.textSub,
-                fontWeight: isCurrentIndex ? FontWeight.bold : FontWeight.normal,
+                color: isCurrentIndex
+                    ? context.appColor.textMain
+                    : context.appColor.textSub,
+                fontWeight:
+                    isCurrentIndex ? FontWeight.bold : FontWeight.normal,
               ),
             ),
           ],

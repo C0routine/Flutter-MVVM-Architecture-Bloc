@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:architecture/core/router/app_router.dart';
 import 'package:architecture/core/common/default_screen.dart';
@@ -19,7 +18,7 @@ class MyScreen extends StatelessWidget {
           },
           child: Text(
             'My Screen',
-            style: TextStyle(fontSize: 30.sp, color: context.color.textMain),
+            style: TextStyle(fontSize: 30, color: context.color.textMain),
           ),
         ),
       ),

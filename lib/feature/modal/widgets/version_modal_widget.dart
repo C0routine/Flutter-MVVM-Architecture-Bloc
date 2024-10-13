@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:architecture/core/config/app_theme.dart';
+import 'package:architecture/core/configs/app_theme.dart';
 
 class VersionModalWidget extends ModalRoute<void> {
   VersionModalWidget({
@@ -26,7 +25,8 @@ class VersionModalWidget extends ModalRoute<void> {
   String? get barrierLabel => null;
 
   @override
-  Widget buildPage(BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation) {
+  Widget buildPage(BuildContext context, Animation<double> animation,
+      Animation<double> secondaryAnimation) {
     return Material(
       type: MaterialType.transparency,
       child: SafeArea(
@@ -36,10 +36,10 @@ class VersionModalWidget extends ModalRoute<void> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
               decoration: BoxDecoration(
                 color: context.appColor.bg300,
-                borderRadius: BorderRadius.circular(16.r),
+                borderRadius: BorderRadius.circular(16),
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -48,9 +48,10 @@ class VersionModalWidget extends ModalRoute<void> {
                 children: [
                   Text(
                     '새로운 버전이 있습니다.\n업데이트가 필요합니다.',
-                    style: context.textStyle.title20b.copyWith(color: context.appColor.textMain),
+                    style: context.textStyle.title20b
+                        .copyWith(color: context.appColor.textMain),
                   ),
-                  SizedBox(height: 10.h),
+                  const SizedBox(height: 10),
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -64,11 +65,12 @@ class VersionModalWidget extends ModalRoute<void> {
                         ),
                         child: Text(
                           '업데이트',
-                          style: context.textStyle.body16b.copyWith(color: context.appColor.textMain),
+                          style: context.textStyle.body16b
+                              .copyWith(color: context.appColor.textMain),
                         ),
                       ),
                       if (!isForceUpdate) ...[
-                        SizedBox(width: 10.w),
+                        const SizedBox(width: 10),
                         OutlinedButton(
                           onPressed: () => context.pop(),
                           style: OutlinedButton.styleFrom(
@@ -77,7 +79,8 @@ class VersionModalWidget extends ModalRoute<void> {
                           ),
                           child: Text(
                             '나중에',
-                            style: context.textStyle.body16b.copyWith(color: context.appColor.textMain),
+                            style: context.textStyle.body16b
+                                .copyWith(color: context.appColor.textMain),
                           ),
                         ),
                       ],
