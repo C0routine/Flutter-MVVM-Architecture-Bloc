@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'package:architecture/core/configs/app_color.dart';
-import 'package:architecture/feature/theme/bloc/barrel.dart';
+import 'package:architecture/feature/setting/bloc/barrel.dart';
 
 extension ThemeShortcut on BuildContext {
   AppColor get appColor => Theme.of(this).extension<CustomAppThemeExtension>()!;
-  CustomAppTextExtension get textStyle =>
-      Theme.of(this).extension<CustomAppTextExtension>()!;
+  CustomAppTextExtension get textStyle => Theme.of(this).extension<CustomAppTextExtension>()!;
 }
 
 ThemeData customAppTheme(ThemeType type) {
@@ -23,8 +22,7 @@ ThemeData customAppTheme(ThemeType type) {
 }
 
 /// App Color ThemeExtension
-class CustomAppThemeExtension extends ThemeExtension<CustomAppThemeExtension>
-    implements AppColor {
+class CustomAppThemeExtension extends ThemeExtension<CustomAppThemeExtension> implements AppColor {
   CustomAppThemeExtension({required this.appColor, required this.themeType});
 
   final AppColor appColor;
@@ -36,8 +34,7 @@ class CustomAppThemeExtension extends ThemeExtension<CustomAppThemeExtension>
   }
 
   @override
-  ThemeExtension<CustomAppThemeExtension> lerp(
-      covariant ThemeExtension<CustomAppThemeExtension>? other, double t) {
+  ThemeExtension<CustomAppThemeExtension> lerp(covariant ThemeExtension<CustomAppThemeExtension>? other, double t) {
     return this;
   }
 
@@ -84,18 +81,13 @@ class CustomAppTextExtension extends ThemeExtension<CustomAppTextExtension> {
   }
 
   @override
-  ThemeExtension<CustomAppTextExtension> lerp(
-      covariant ThemeExtension<CustomAppTextExtension>? other, double t) {
+  ThemeExtension<CustomAppTextExtension> lerp(covariant ThemeExtension<CustomAppTextExtension>? other, double t) {
     return this;
   }
 
-  final TextStyle title20b =
-      const TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
-  final TextStyle title20n =
-      const TextStyle(fontSize: 20, fontWeight: FontWeight.normal);
+  final TextStyle title20b = const TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
+  final TextStyle title20n = const TextStyle(fontSize: 20, fontWeight: FontWeight.normal);
 
-  final TextStyle body16b =
-      const TextStyle(fontSize: 16, fontWeight: FontWeight.bold);
-  final TextStyle body16n =
-      const TextStyle(fontSize: 16, fontWeight: FontWeight.normal);
+  final TextStyle body16b = const TextStyle(fontSize: 16, fontWeight: FontWeight.bold);
+  final TextStyle body16n = const TextStyle(fontSize: 16, fontWeight: FontWeight.normal);
 }

@@ -1,3 +1,4 @@
+import 'package:architecture/core/configs/.gen/app_localization.g.dart';
 import 'package:flutter/material.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
@@ -19,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Text(AppLocalization.of(context)!.appName),
           const ThemeSwitchWidget(),
           Skeletonizer(
             child: Container(
