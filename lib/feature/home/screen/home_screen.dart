@@ -1,9 +1,8 @@
-import 'package:architecture/core/configs/.gen/app_localization.g.dart';
 import 'package:flutter/material.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-import 'package:architecture/core/configs/app_theme.dart';
 import 'package:architecture/core/common/default_screen.dart';
+import 'package:architecture/core/extensions/style_extension.dart';
 import 'package:architecture/feature/home/widgets/theme_switch.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,13 +19,13 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(AppLocalization.of(context)!.appName),
+          Text(context.text.appName),
           const ThemeSwitchWidget(),
           Skeletonizer(
             child: Container(
               width: 300,
               height: 200,
-              color: context.appColor.primary200,
+              color: context.color.primary200,
             ),
           ),
         ],

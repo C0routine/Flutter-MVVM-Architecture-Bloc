@@ -5,7 +5,7 @@ import 'package:architecture/core/configs/app_theme.dart';
 import 'package:architecture/core/router/router_config.dart';
 import 'package:architecture/feature/modal/bloc/barrel.dart';
 import 'package:architecture/feature/setting/bloc/barrel.dart';
-import 'package:architecture/core/configs/.gen/app_localization.g.dart';
+import 'package:architecture/core/configs/.gen/app_localizations.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -28,8 +28,8 @@ class _AppState extends State<App> {
             theme: customAppTheme(state.themeType),
             routerConfig: routerConfig,
             locale: state.locale,
-            supportedLocales: AppLocalization.supportedLocales,
-            localizationsDelegates: AppLocalization.localizationsDelegates,
+            supportedLocales: AppText.supportedLocales,
+            localizationsDelegates: AppText.localizationsDelegates,
           );
         },
       ),

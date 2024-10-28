@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:architecture/feature/setting/bloc/barrel.dart';
-import 'package:architecture/core/extensions/theme_extension.dart';
+import 'package:architecture/core/extensions/style_extension.dart';
 
 class ThemeSwitchWidget extends StatefulWidget {
   const ThemeSwitchWidget({super.key});

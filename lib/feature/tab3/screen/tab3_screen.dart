@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:architecture/core/common/default_screen.dart';
-import 'package:architecture/core/extensions/theme_extension.dart';
+import 'package:architecture/core/extensions/style_extension.dart';
 
 class Tab3Screen extends StatelessWidget {
   const Tab3Screen({super.key});
