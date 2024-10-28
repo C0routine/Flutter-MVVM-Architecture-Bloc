@@ -5,10 +5,15 @@ import 'package:architecture/feature/setting/bloc/barrel.dart';
 /// [theme] 값에 따라 DarkAppColor 또는 LightAppColor instance 를 반환
 abstract class AppColor {
   factory AppColor({ThemeType? type}) {
-    if (type == ThemeType.light) {
-      return LightAppColor();
-    } else {
-      return DarkAppColor();
+    switch (type) {
+      case ThemeType.light:
+        return LightAppColor();
+      case ThemeType.dark:
+        return DarkAppColor();
+      case ThemeType.halloween:
+        return HalloweenAppColor();
+      default:
+        return LightAppColor();
     }
   }
 
@@ -99,6 +104,46 @@ class DarkAppColor implements AppColor {
 
   @override
   Color get primary300 => const Color(0xFFe0ffff); // #e0ffff
+
+  @override
+  Color get textMain => const Color(0xFFffffff); // #ffffff
+
+  @override
+  Color get textSub => const Color(0xFF9e9e9e); // #9e9e9e
+}
+
+class HalloweenAppColor implements AppColor {
+  HalloweenAppColor._init();
+
+  static final HalloweenAppColor _instance = HalloweenAppColor._init();
+
+  factory HalloweenAppColor() {
+    return _instance;
+  }
+
+  @override
+  Color get accent100 => const Color(0xFFff6f00); // #ff6f00
+
+  @override
+  Color get accent200 => const Color(0xFFff8c1a); // #ff8c1a
+
+  @override
+  Color get bg100 => const Color(0xFF1E1E1E); // #1E1E1E
+
+  @override
+  Color get bg200 => const Color(0xFF2d2d2d); // #2d2d2d
+
+  @override
+  Color get bg300 => const Color(0xFF454545); // #454545
+
+  @override
+  Color get primary100 => const Color(0xFFff6f00); // #ff6f00
+
+  @override
+  Color get primary200 => const Color(0xFFff8c1a); // #ff8c1a
+
+  @override
+  Color get primary300 => const Color(0xFFff9d3f); // #ff9d3f
 
   @override
   Color get textMain => const Color(0xFFffffff); // #ffffff

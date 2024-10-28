@@ -3,11 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:architecture/core/configs/app_color.dart';
 import 'package:architecture/feature/setting/bloc/barrel.dart';
 
-extension ThemeShortcut on BuildContext {
-  AppColor get appColor => Theme.of(this).extension<CustomAppThemeExtension>()!;
-  CustomAppTextExtension get textStyle => Theme.of(this).extension<CustomAppTextExtension>()!;
-}
-
 ThemeData customAppTheme(ThemeType type) {
   /// 현재 테마에 맞는 AppColor instance 생성
   final appColor = AppColor(type: type);
@@ -15,32 +10,30 @@ ThemeData customAppTheme(ThemeType type) {
   return ThemeData(
     scaffoldBackgroundColor: appColor.bg100,
     extensions: <ThemeExtension>[
-      CustomAppThemeExtension(appColor: appColor, themeType: type),
-      CustomAppTextExtension(),
+      AppColorThemeExtension(appColor: appColor, themeType: type),
+      AppTextStyleThemeExtension(),
     ],
   );
 }
 
 /// App Color ThemeExtension
-class CustomAppThemeExtension extends ThemeExtension<CustomAppThemeExtension> implements AppColor {
-  CustomAppThemeExtension({required this.appColor, required this.themeType});
+class AppColorThemeExtension extends ThemeExtension<AppColorThemeExtension> implements AppColor {
+  AppColorThemeExtension({required this.appColor, required this.themeType});
 
   final AppColor appColor;
   final ThemeType themeType;
 
   @override
-  ThemeExtension<CustomAppThemeExtension> copyWith() {
-    return this;
-  }
+  ThemeExtension<AppColorThemeExtension> copyWith() => this;
 
   @override
-  ThemeExtension<CustomAppThemeExtension> lerp(covariant ThemeExtension<CustomAppThemeExtension>? other, double t) {
-    return this;
-  }
+  ThemeExtension<AppColorThemeExtension> lerp(covariant ThemeExtension<AppColorThemeExtension>? other, double t) => this;
 
   bool get isDark => themeType == ThemeType.dark;
 
   bool get isLight => themeType == ThemeType.light;
+
+  bool get isHalloween => themeType == ThemeType.halloween;
 
   @override
   Color get accent100 => appColor.accent100;
@@ -74,20 +67,40 @@ class CustomAppThemeExtension extends ThemeExtension<CustomAppThemeExtension> im
 }
 
 /// App TextStyle ThemeExtension
-class CustomAppTextExtension extends ThemeExtension<CustomAppTextExtension> {
+class AppTextStyleThemeExtension extends ThemeExtension<AppTextStyleThemeExtension> {
   @override
-  ThemeExtension<CustomAppTextExtension> copyWith() {
-    return this;
-  }
+  ThemeExtension<AppTextStyleThemeExtension> copyWith() => this;
 
   @override
-  ThemeExtension<CustomAppTextExtension> lerp(covariant ThemeExtension<CustomAppTextExtension>? other, double t) {
-    return this;
-  }
+  ThemeExtension<AppTextStyleThemeExtension> lerp(covariant ThemeExtension<AppTextStyleThemeExtension>? other, double t) => this;
 
-  final TextStyle title20b = const TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
-  final TextStyle title20n = const TextStyle(fontSize: 20, fontWeight: FontWeight.normal);
+  final TextStyle font12b = const TextStyle(fontSize: 12, fontWeight: FontWeight.bold);
+  final TextStyle font12n = const TextStyle(fontSize: 12, fontWeight: FontWeight.normal);
 
-  final TextStyle body16b = const TextStyle(fontSize: 16, fontWeight: FontWeight.bold);
-  final TextStyle body16n = const TextStyle(fontSize: 16, fontWeight: FontWeight.normal);
+  final TextStyle font14b = const TextStyle(fontSize: 14, fontWeight: FontWeight.bold);
+  final TextStyle font14n = const TextStyle(fontSize: 14, fontWeight: FontWeight.normal);
+
+  final TextStyle font16b = const TextStyle(fontSize: 16, fontWeight: FontWeight.bold);
+  final TextStyle font16n = const TextStyle(fontSize: 16, fontWeight: FontWeight.normal);
+
+  final TextStyle font18b = const TextStyle(fontSize: 18, fontWeight: FontWeight.bold);
+  final TextStyle font18n = const TextStyle(fontSize: 18, fontWeight: FontWeight.normal);
+
+  final TextStyle font20b = const TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
+  final TextStyle font20n = const TextStyle(fontSize: 20, fontWeight: FontWeight.normal);
+
+  final TextStyle font22b = const TextStyle(fontSize: 22, fontWeight: FontWeight.bold);
+  final TextStyle font22n = const TextStyle(fontSize: 22, fontWeight: FontWeight.normal);
+
+  final TextStyle font24b = const TextStyle(fontSize: 24, fontWeight: FontWeight.bold);
+  final TextStyle font24n = const TextStyle(fontSize: 24, fontWeight: FontWeight.normal);
+
+  final TextStyle font26b = const TextStyle(fontSize: 26, fontWeight: FontWeight.bold);
+  final TextStyle font26n = const TextStyle(fontSize: 26, fontWeight: FontWeight.normal);
+
+  final TextStyle font28b = const TextStyle(fontSize: 28, fontWeight: FontWeight.bold);
+  final TextStyle font28n = const TextStyle(fontSize: 28, fontWeight: FontWeight.normal);
+
+  final TextStyle font30b = const TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  final TextStyle font30n = const TextStyle(fontSize: 30, fontWeight: FontWeight.normal);
 }

@@ -6,8 +6,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:architecture/core/utils/storage_utils.dart';
 import 'package:architecture/feature/setting/bloc/barrel.dart';
-import 'package:architecture/core/extensions/theme_extension.dart';
-import 'package:architecture/core/configs/.gen/app_localization.g.dart';
+import 'package:architecture/core/extensions/style_extension.dart';
+import 'package:architecture/core/configs/.gen/app_localizations.dart';
 
 class SettingBloc extends Bloc<SettingEvent, SettingState> {
   SettingBloc() : super(const SettingState()) {
@@ -37,7 +37,7 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
     Locale locale = Locale(languageCode ?? Platform.localeName.split('_').first);
 
     // 지원하는 언어가 아닌 경우 기본 언어(english)로 설정
-    if (!AppLocalization.delegate.isSupported(locale)) {
+    if (!AppText.delegate.isSupported(locale)) {
       locale = const Locale('en');
     }
 
