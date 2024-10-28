@@ -40,6 +40,7 @@ dependencies:
 
   # UI
   intl: any
+  rive: ^0.13.15
   skeletonizer: ^1.4.2
 
   # State Management
@@ -93,6 +94,7 @@ flutter:
   assets:
     - assets/translations/
     - assets/icons/
+    - assets/emoji/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
@@ -127,6 +129,7 @@ flutter_gen:
 
   integrations:
     flutter_svg: true
+    rive: true
 
   assets:
     enabled: true

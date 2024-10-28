@@ -120,6 +120,8 @@ PODS:
   - package_info_plus (0.4.5):
     - Flutter
   - PromisesObjC (2.4.0)
+  - rive_common (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - firebase_analytics (from `.symlinks/plugins/firebase_analytics/ios`)
@@ -128,6 +130,7 @@ DEPENDENCIES:
   - Flutter (from `Flutter`)
   - flutter_secure_storage (from `.symlinks/plugins/flutter_secure_storage/ios`)
   - package_info_plus (from `.symlinks/plugins/package_info_plus/ios`)
+  - rive_common (from `.symlinks/plugins/rive_common/ios`)
 
 SPEC REPOS:
   trunk:
@@ -158,6 +161,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/flutter_secure_storage/ios"
   package_info_plus:
     :path: ".symlinks/plugins/package_info_plus/ios"
+  rive_common:
+    :path: ".symlinks/plugins/rive_common/ios"
 
 SPEC CHECKSUMS:
   Firebase: cec914dab6fd7b1bd8ab56ea07ce4e03dd251c2d
@@ -179,6 +184,7 @@ SPEC CHECKSUMS:
   nanopb: 438bc412db1928dac798aa6fd75726007be04262
   package_info_plus: 58f0028419748fad15bf008b270aaa8e54380b1c
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
+  rive_common: cbbac3192af00d7341f19dae2f26298e9e37d99e
 
 PODFILE CHECKSUM: a57f30d18f102dd3ce366b1d62a55ecbef2158e5
 
