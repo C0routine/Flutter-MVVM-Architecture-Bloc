@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 import 'package:architecture/core/common/default_screen.dart';
+import 'package:architecture/core/configs/.gen/assets.gen.dart';
 import 'package:architecture/core/extensions/style_extension.dart';
 import 'package:architecture/feature/home/widgets/theme_switch.dart';
 
@@ -28,6 +29,12 @@ class _HomeScreenState extends State<HomeScreen> {
               color: context.color.primary200,
             ),
           ),
+          SizedBox(
+            width: 200,
+            height: 200,
+            child: AppAssets.emoji.emoji.rive(),
+            // child: RiveAnimation.network('https://cdn.rive.app/animations/vehicles.riv'),
+          )
         ],
       ),
     );
