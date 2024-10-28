@@ -2,7 +2,8 @@
 arb-dir: assets/translations
 output-dir: lib/core/configs/.gen
 template-arb-file: app_ko.arb
-output-localization-file: app_localization.g.dart
-output-class: AppLocalization
-# flutter_gen plugin error fix
+output-localization-file: app_localizations.dart
+output-class: AppText
+# Flutter 프로젝트의 기본 지정된 디렉토리에 생성할지 여부를 결정. (Default : true)
+# output-dir 에 현지화 파일이 생성하기 위해서 false 로 설정.
 synthetic-package: false
